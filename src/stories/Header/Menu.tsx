@@ -1,15 +1,14 @@
 "use client";
 
-import React from "react";
 import { JSX } from "react";
 import { useState } from "react";
 import cn from "clsx";
 import { Popover, PopoverButton, PopoverPanel } from "@headlessui/react";
-import { BellElectric, Car, Computer, House, PawPrint, Shirt, ToyBrick, WashingMachine } from "lucide-react";
+import { BellElectric, Computer, House, ToyBrick, WashingMachine } from "lucide-react";
 import Link from "next/link";
 import { Cross as Hamburger } from "hamburger-react";
 import Brands from "@/stories/Header/Brands";
-import ReadMore from "../ReadMore";
+import ReadMore from "@/stories/ReadMore";
 
 interface SubSubCategory {
   name: string;
@@ -179,7 +178,7 @@ function Menu() {
       <PopoverPanel
         transition
         anchor="bottom"
-        className="!w-9/12 !left-10 !z-20 py-3 min-h-2/3 translate-y-3 data-closed:opacity-0 shadow-300 divide-white/5 rounded-xl bg-white/5 text-sm/6 transition duration-200 ease-in-out"
+        className="!w-9/12 !left-10 !z-20 bg-white py-3 min-h-2/3 translate-y-3 data-closed:opacity-0 shadow-300 divide-white/5 rounded-xl text-sm/6 transition duration-200 ease-in-out"
       >
         <div className="flex items-start bg-white | z-50">
           <div className="w-[30%] z-10 overflow-y-auto">
