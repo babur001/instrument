@@ -22,8 +22,8 @@ function Products({ type }: { type?: string }) {
   );
 
   return (
-    <section className="pt-12 container mx-auto">
-      <div className="inline-block">
+    <section className="container mx-auto">
+      <div className="inline-block relative">
         <h1 className="font-bold text-2xl text-[#001A34]">Бытовая Техника</h1>
         {type === "new" ? (
           <p className="bg-[#F3FFF6] text-[#00F836] inline-block | absolute -top-3 -right-7 text-xs font-bold | px-3 py-1 | rounded-full">New</p>
@@ -31,12 +31,12 @@ function Products({ type }: { type?: string }) {
       </div>
 
       <div className="pt-5">
-        <Slider slidesToShow={4.8} infinite={false} slidesToScroll={4}>
+        <Slider slidesToShow={5} infinite={false} slidesToScroll={4}>
           {state.map((product, index) => {
             return (
               <div
                 // href={"#" || `/product/${index}`}
-                className="flex-shrink-0 relative cursor-pointer hover:shadow-200 block h-full !w-[220px] shadow-100 rounded-xl overflow-hidden"
+                className="flex-shrink-0 relative cursor-pointer hover:shadow-200 block h-full !w-[230px] shadow-100 rounded-xl overflow-hidden"
                 key={index}
               >
                 <div className="rounded-[7px] p-2 group duration-300 h-full">
