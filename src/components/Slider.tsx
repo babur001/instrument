@@ -17,42 +17,44 @@ function SliderWrapper(): React.ReactElement {
           autoplay={true}
           speed={500}
           slidesToShow={1}
+          draggable={true}
+          className="center"
           slidesToScroll={1}
-          //
+          centerMode={true}
         >
           <div
             className={cn({
-              "!focus:ring-0 !outline-0 focus:outline-0 1border-0 w-full min-h-80": true,
+              "!focus:ring-0 !outline-0 focus:outline-0 !border-0 px-1": true,
             })}
           >
             <img
               src="/images/full-banner.png"
               alt="Banner 1"
-              className="object-cover !w-full aspect-3/1 | outline-none focus:outline-none | rounded-[10px] overflow-hidden hover:shadow-100 duration-300"
+              className="object-cover !w-full h-full aspect-3/1 | outline-none focus:outline-none | rounded-[10px] overflow-hidden hover:shadow-100 duration-300"
             />
           </div>
 
           <div
             className={cn({
-              "!focus:ring-0 !outline-0 focus:outline-0 1border-0 w-full min-h-80": true,
+              "!focus:ring-0 !outline-0 focus:outline-0 !border-0 px-1": true,
             })}
           >
             <img
               src="/images/full-banner2.png"
               alt="Banner 2"
-              className="object-cover !w-full aspect-3/1 | outline-none focus:outline-none | rounded-[10px]  overflow-hidden"
+              className="object-cover !w-full h-full aspect-3/1 | outline-none focus:outline-none | rounded-[10px]  overflow-hidden"
             />
           </div>
 
           <div
             className={cn({
-              "!focus:ring-0 !outline-0 focus:outline-0 1border-0 w-full min-h-80": true,
+              "!focus:ring-0 !outline-0 focus:outline-0 !border-0 px-1": true,
             })}
           >
             <img
               src="/images/full-banner3.png"
               alt="Banner 3"
-              className="object-cover !w-full aspect-3/1 | outline-none focus:outline-none | rounded-[10px]  overflow-hidden"
+              className="object-cover !w-full h-full aspect-3/1 | outline-none focus:outline-none | rounded-[10px]  overflow-hidden"
             />
           </div>
         </Slider>
