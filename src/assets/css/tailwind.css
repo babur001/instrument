@@ -6,7 +6,7 @@ root {
 }
 
 .container {
-  @apply max-w-[1200px];
+  @apply max-w-[1024px];
 }
 
 /* @Shadcn/ui */

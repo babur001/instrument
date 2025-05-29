@@ -95,12 +95,16 @@ function Category() {
             <div className="category:crumb | py-3">
               <div className="category__link | flex items-center | py-1.5 | click:scale">
                 <ChevronRight strokeWidth={1} className="h-4" />
-                <h3 className="duration-200 ml-3 | font-semibold">Электроника</h3>
+                <h3 className="duration-200 ml-3 | font-semibold">
+                  Электроника
+                </h3>
               </div>
 
               <div className="category__link | flex items-center | py-1.5 | click:scale">
                 <ChevronRight className="h-4" />
-                <h3 className="duration-200 ml-3 | font-semibold">Ноутбуки, планшеты и компьютеры</h3>
+                <h3 className="duration-200 ml-3 | font-semibold">
+                  Ноутбуки, планшеты и компьютеры
+                </h3>
               </div>
 
               <div className="category__link--active | px-5 py-2 mt-1 | font-semibold | text-[#30A8F7] bg-[#F2F9FF] | inline-block | rounded-[7px] | click:scale">
@@ -118,7 +122,11 @@ function Category() {
 
               <div className="colors | grid grid-cols-5 justify-items-start gap-2 | py-3 w-2/3">
                 {colors.map((color, index) => (
-                  <p key={index} className="border border-gray-300 | rounded-full | w-9 h-9 | click:scale" style={{ backgroundColor: color.color }}></p>
+                  <p
+                    key={index}
+                    className="border border-gray-300 | rounded-full | w-9 h-9 | click:scale"
+                    style={{ backgroundColor: color.color }}
+                  ></p>
                 ))}
               </div>
             </div>
@@ -131,12 +139,17 @@ function Category() {
                   <p
                     key={index}
                     className={cn({
-                      "px-6 font-semibold py-2 mb-2 | text-sm | border border-gray-300 flex items-center justify-center | click:scale | rounded-full": true,
+                      "px-6 font-semibold py-2 mb-2 | text-sm | border border-gray-300 flex items-center justify-center | click:scale | rounded-full":
+                        true,
                       "bg-[#30A8F7] text-white": index === 1 || index == 3,
                     })}
                   >
-                    {index === 1 && <Check strokeWidth={1} className="h-3 mr-3" />}
-                    {index === 3 && <Check strokeWidth={1} className="h-3 mr-3" />}
+                    {index === 1 && (
+                      <Check strokeWidth={1} className="h-3 mr-3" />
+                    )}
+                    {index === 3 && (
+                      <Check strokeWidth={1} className="h-3 mr-3" />
+                    )}
                     {ram.value}
                   </p>
                 ))}
@@ -160,12 +173,17 @@ function Category() {
                   <p
                     key={index}
                     className={cn({
-                      "px-6 font-semibold py-2 | text-sm | border border-gray-300 flex items-center justify-center | click:scale | rounded-full": true,
+                      "px-6 font-semibold py-2 | text-sm | border border-gray-300 flex items-center justify-center | click:scale | rounded-full":
+                        true,
                       "bg-[#30A8F7] text-white": index === 0 || index == 3,
                     })}
                   >
-                    {index === 0 && <Check strokeWidth={1} className="h-3 mr-3" />}
-                    {index === 3 && <Check strokeWidth={1} className="h-3 mr-3" />}
+                    {index === 0 && (
+                      <Check strokeWidth={1} className="h-3 mr-3" />
+                    )}
+                    {index === 3 && (
+                      <Check strokeWidth={1} className="h-3 mr-3" />
+                    )}
                     {ram.value}
                   </p>
                 ))}
@@ -174,10 +192,16 @@ function Category() {
           </Layout.Aside>
 
           <Layout.Body>
-            <Breadcrumb />
+            <Breadcrumb
+              links={[
+                { title: "Электроника", href: "" },
+                { title: "Ноутбуки, планшеты и компьютеры", href: "" },
+                { title: "Ноутбуки" },
+              ]}
+            />
             <ProductSelect />
 
-            <div className="pt-5 grid grid-cols-4 gap-5">
+            <div className="pt-5 grid grid-cols-4 gap-2">
               {state.map((product, index) => {
                 return <ProductCard product={product} key={index} />;
               })}

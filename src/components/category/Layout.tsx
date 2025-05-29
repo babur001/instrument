@@ -1,5 +1,5 @@
 export function Layout(props: any) {
-  return <section className="flex gap-10" {...props} />;
+  return <section className="flex gap-5" {...props} />;
 }
 
 function Aside(props: any) {
