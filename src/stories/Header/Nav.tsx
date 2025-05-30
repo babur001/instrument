@@ -22,17 +22,23 @@ export const Button = ({
 
 export function Nav() {
   return (
-    <nav className="flex items-center justify-center gap-3 | relative">
+    <nav className="flex items-center justify-center gap-1 | relative">
       <Link href="#">
-        <Button leftIcon={<User strokeWidth={1} className="h-5" />}>Войти</Button>
+        <Button leftIcon={<User strokeWidth={1} className="h-5" />}>
+          Войти
+        </Button>
       </Link>
 
       <Link href="#">
-        <Button leftIcon={<Heart strokeWidth={1} className="h-5" />}>Избранное</Button>
+        <Button leftIcon={<Heart strokeWidth={1} className="h-5" />}>
+          Избранное
+        </Button>
       </Link>
 
       <Link href="#">
-        <Button leftIcon={<ShoppingBag strokeWidth={1} className="h-5" />}>Корзина</Button>
+        <Button leftIcon={<ShoppingBag strokeWidth={1} className="h-5" />}>
+          Корзина
+        </Button>
       </Link>
     </nav>
   );

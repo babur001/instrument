@@ -10,7 +10,7 @@ function Input() {
   return (
     <div
       className={cn({
-        "focus-within:border-[#30A8F7] h-9 font-normal pr-3 flex items-center justify-center w-full | border border-gray-300 duration-300 overflow-hidden rounded-def": true,
+        "focus-within:border-[#30A8F7] h-9 font-normal pr-3 flex items-center justify-center w-full flex-1 | border border-gray-300 duration-300 overflow-hidden rounded-def": true,
       })}
     >
       <input

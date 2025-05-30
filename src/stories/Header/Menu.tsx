@@ -4,7 +4,13 @@ import { JSX } from "react";
 import { useState } from "react";
 import cn from "clsx";
 import { Popover, PopoverButton, PopoverPanel } from "@headlessui/react";
-import { BellElectric, Computer, House, ToyBrick, WashingMachine } from "lucide-react";
+import {
+  BellElectric,
+  Computer,
+  House,
+  ToyBrick,
+  WashingMachine,
+} from "lucide-react";
 import Link from "next/link";
 import { Cross as Hamburger } from "hamburger-react";
 import Brands from "@/stories/Header/Brands";
@@ -27,10 +33,15 @@ interface Category {
   subs: SubCategory[];
 }
 
-const categories: Category[] = [
+export const categories: Category[] = [
   {
     name: "Электроника",
-    icon: ({ isActive }: { isActive: boolean }) => <BellElectric className={cn({ "!text-primary": isActive })} strokeWidth={1.25} />,
+    icon: ({ isActive }: { isActive: boolean }) => (
+      <BellElectric
+        className={cn({ "!text-primary": isActive })}
+        strokeWidth={1.25}
+      />
+    ),
     subs: [
       {
         name: "Телефоны",
@@ -81,7 +92,12 @@ const categories: Category[] = [
   },
   {
     name: "Компьютерная техника",
-    icon: ({ isActive }: { isActive: boolean }) => <Computer className={cn({ "!text-primary": isActive })} strokeWidth={1.25} />,
+    icon: ({ isActive }: { isActive: boolean }) => (
+      <Computer
+        className={cn({ "!text-primary": isActive })}
+        strokeWidth={1.25}
+      />
+    ),
     subs: [
       {
         name: "Компьютеры",
@@ -132,7 +148,12 @@ const categories: Category[] = [
   },
   {
     name: "Бытовая техника",
-    icon: ({ isActive }: { isActive: boolean }) => <WashingMachine className={cn({ "!text-primary": isActive })} strokeWidth={1.25} />,
+    icon: ({ isActive }: { isActive: boolean }) => (
+      <WashingMachine
+        className={cn({ "!text-primary": isActive })}
+        strokeWidth={1.25}
+      />
+    ),
     subs: [
       { name: "Холодильники", slug: "refrigerators" },
       { name: "Стиральные машины", slug: "washing-machines" },
@@ -143,7 +164,12 @@ const categories: Category[] = [
   },
   {
     name: "Детские товары",
-    icon: ({ isActive }: { isActive: boolean }) => <ToyBrick className={cn({ "!text-primary": isActive })} strokeWidth={1.25} />,
+    icon: ({ isActive }: { isActive: boolean }) => (
+      <ToyBrick
+        className={cn({ "!text-primary": isActive })}
+        strokeWidth={1.25}
+      />
+    ),
     subs: [
       { name: "Игрушки", slug: "toys" },
       { name: "Детская одежда", slug: "kids-clothing" },
@@ -154,7 +180,9 @@ const categories: Category[] = [
   },
   {
     name: "Дом и дача",
-    icon: ({ isActive }: { isActive: boolean }) => <House className={cn({ "!text-primary": isActive })} strokeWidth={1.25} />,
+    icon: ({ isActive }: { isActive: boolean }) => (
+      <House className={cn({ "!text-primary": isActive })} strokeWidth={1.25} />
+    ),
     subs: [
       { name: "Мебель", slug: "furniture" },
       { name: "Строительство", slug: "construction" },
@@ -166,12 +194,20 @@ const categories: Category[] = [
 ];
 
 function Menu() {
-  const [activeCategory, setActiveCategory] = useState<string | null>(null);
+  const [activeCategory, setActiveCategory] = useState<string | null>(
+    categories[0].name,
+  );
 
   return (
     <Popover>
-      <PopoverButton className="flex items-center justify-center rounded-def h-9 mx-5 bg-blue-50 pr-2 | cursor-pointer | outline-none focus:outline-none">
-        <Hamburger direction="right" size={20} distance="sm" rounded color="#30a8f7" />
+      <PopoverButton className="flex items-center justify-center rounded-def h-9 bg-blue-50 pr-2 | cursor-pointer | outline-none focus:outline-none">
+        <Hamburger
+          direction="right"
+          size={20}
+          distance="sm"
+          rounded
+          color="#30a8f7"
+        />
         <h2 className="font-medium text-base text-primary">Категории</h2>
       </PopoverButton>
 
@@ -187,18 +223,22 @@ function Menu() {
                 <div
                   key={index}
                   className={cn({
-                    "flex items-center | py-2 pl-2 | group hover:bg-[#F2F9FF] !cursor-pointer click:scale | rounded-def": true,
+                    "flex items-center | py-2 pl-2 | group hover:bg-[#F2F9FF] !cursor-pointer click:scale | rounded-def":
+                      true,
                     "!bg-[#F2F9FF]": activeCategory === category.name,
                   })}
                   onMouseEnter={() => setActiveCategory(category.name)}
                 >
                   <div className="h-6 w-6">
-                    <category.icon isActive={activeCategory === category.name} />
+                    <category.icon
+                      isActive={activeCategory === category.name}
+                    />
                   </div>
 
                   <div
                     className={cn({
-                      "pl-4 | text-base font-normal pr-3 group-hover:text-primary": true,
+                      "pl-4 | text-base font-normal pr-3 group-hover:text-primary":
+                        true,
                       "!text-primary": activeCategory === category.name,
                     })}
                   >
@@ -215,8 +255,12 @@ function Menu() {
                 .find((category) => category.name === activeCategory)
                 ?.subs?.map((category, index) => (
                   <div className="pr-5" key={index}>
-                    <div className="text-lg font-bold hover:text-primary duration-200 | cursor-pointer">{category.name}</div>
-                    <ReadMore hide={!category.subs?.length || category.subs?.length < 7}>
+                    <div className="text-lg font-bold hover:text-primary duration-200 | cursor-pointer">
+                      {category.name}
+                    </div>
+                    <ReadMore
+                      hide={!category.subs?.length || category.subs?.length < 7}
+                    >
                       <div className="sub:category | mt-1 | grid grid-cols-1 !pl-2">
                         {category.subs?.map((sub, num) => (
                           <Link

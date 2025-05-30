@@ -1,8 +1,8 @@
 "use client";
 
 import React from "react";
-import cn from "clsx";
 import Link from "next/link";
+import { cn } from "@/lib/utils";
 
 interface Brand {
   url: string;
@@ -35,14 +35,24 @@ function Brands({ className, size = "small" }: BrandsProps) {
   return (
     <div className={className}>
       {brands.map((brand, index) => (
-        <Link key={index} href={`/brands/${index}`} className="pt-5 mx-auto flex items-center justify-center w-full">
+        <Link
+          key={index}
+          href={`/brands/${index}`}
+          className="pt-5 mx-auto flex items-center justify-center w-full"
+        >
           <div
             className={cn({
-              "h-12 w-full click:scale filter grayscale hover:grayscale-0 duration-200 opacity-25 hover:opacity-100": true,
+              "h-10 w-full click:scale aspect-square filter grayscale hover:grayscale-0 duration-200 opacity-25 hover:opacity-100":
+                true,
               "h-16": size === "large",
             })}
           >
-            <img src={brand.url} alt="Brand logo" className="h-full object-contain mx-auto" loading="lazy" />
+            <img
+              src={brand.url}
+              alt="Brand logo"
+              className="h-full object-contain mx-auto"
+              loading="lazy"
+            />
           </div>
         </Link>
       ))}
