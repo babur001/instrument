@@ -23,7 +23,7 @@ import Header from "@/stories/Header";
 import Footer from "@/stories/Footer";
 import { Button } from "@/components/ui/button";
 
-function Product(props) {
+function Product(props: any) {
   const [products] = useState([
     {
       url: "https://ikarvon.uz/storage/products/March2023/JiOczND2lDU0D2TeNl8k-medium.webp",

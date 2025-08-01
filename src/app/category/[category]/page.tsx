@@ -4,18 +4,14 @@ import Breadcrumb from "@/components/Breadcrumb";
 import { Layout } from "@/components/category/Layout";
 import ProductSelect from "@/components/category/ProductSelect";
 import ProductCard from "@/components/ProductCard";
-import Products from "@/components/Products";
-import { Tooltip } from "@/components/ui/tooltip";
-import { cn } from "@/lib/utils";
 import Footer from "@/stories/Footer";
 import Header from "@/stories/Header";
 import Brands from "@/stories/Header/Brands";
-import { Check, ChevronLeft, ChevronRight, Info } from "lucide-react";
+import { Check, ChevronLeft } from "lucide-react";
 import { useState } from "react";
 import { Button } from "@/components/ui/button";
 import { categories } from "@/stories/Header/Menu";
 import ReadMore from "@/stories/ReadMore";
-import SliderWrapper from "@/components/Slider";
 import CategoriesGrid from "@/components/CategoriesGrid";
 
 function Category() {
@@ -86,7 +82,7 @@ function Category() {
           usd: "124 000 сум",
         },
       };
-    }),
+    })
   );
 
   if (false) {
